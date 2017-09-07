@@ -1,0 +1,33 @@
+<div class="jumbotron">
+<h1>Agile Manifesto Signers</h1>
+
+
+  <button (click)="seeAll(name.value)">See All</button> <br>
+  <input #name
+         (keyup.enter)="searchName(name.value)"
+         (blur)="searchName(name.value); name.value='' ">
+
+  <button (click)="searchName(name.value)">Search Name</button>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Timestamp</th>
+    <th>Job Title</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr  *ngFor="let user of users">
+    <td [innerHtml]="user.id"> </td>
+    <td [innerHtml]="user.name" ></td>
+    <td [innerHtml]="user.timestamp"></td>
+    <td [innerHtml]="user.pos"></td>
+    <td [innerHtml]="user.description" ></td>
+    <td>USA</td>
+  </tr>
+  </tbody>
+</table>
+</div>
