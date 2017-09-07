@@ -1,7 +1,7 @@
 export class User {
-  id: number;
-  name: number;
-  timestamp: number;
-  pos: string;
+  date: string;
   description: string;
+  pos: string;
+  name: string;
+  url: string;
 }

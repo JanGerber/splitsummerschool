@@ -2,7 +2,7 @@
 <h1>Agile Manifesto Signers</h1>
 
 
-  <button (click)="seeAll(name.value)">See All</button> <br>
+  <button (click)="seeAll()">See All</button> <br>
   <input #name
          (keyup.enter)="searchName(name.value)"
          (blur)="searchName(name.value); name.value='' ">
@@ -12,21 +12,20 @@
 <table class="table">
   <thead>
   <tr>
-    <th>ID</th>
     <th>Name</th>
-    <th>Timestamp</th>
+    <th>Time</th>
     <th>Job Title</th>
     <th>Description</th>
+    <th>Url</th>
   </tr>
   </thead>
   <tbody>
-  <tr  *ngFor="let user of users">
-    <td [innerHtml]="user.id"> </td>
-    <td [innerHtml]="user.name" ></td>
-    <td [innerHtml]="user.timestamp"></td>
-    <td [innerHtml]="user.pos"></td>
-    <td [innerHtml]="user.description" ></td>
-    <td>USA</td>
+  <tr  *ngFor="let signer of signers">
+    <td [innerHtml]="signer.name"> </td>
+    <td [innerHtml]="signer.date" ></td>
+    <td [innerHtml]="signer.pos"></td>
+    <td [innerHtml]="signer.description"></td>
+    <td [innerHtml]="signer.url"></td>
   </tr>
   </tbody>
 </table>

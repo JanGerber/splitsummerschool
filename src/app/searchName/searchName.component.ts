@@ -11,25 +11,25 @@ export class SearchNameComponent {
   constructor(private userService: SearchNameService) {}
 
   title = 'app';
-  users: User[];
+  public signers: User[];
 
-  searchName(name: string) {
+  public searchName(name: string) {
     if (name !== '') {
       console.log('Test: ' + name);
       this.userService.getSpecSigners(name)
         .subscribe(
-          users => (this.users = users) ,
+          res => (this.signers = res.signers, console.log(res)) ,
           err => {
             // Log errors if any
             console.log(err);
           });
     }
   }
-  seeAll() {
+  public seeAll() {
     console.log('See All ');
     this.userService.getAllSigners()
       .subscribe(
-        users => (this.users = users) ,
+        res => (this.signers = res.signers,console.log(res)) ,
         err => {
           // Log errors if any
           console.log(err);
